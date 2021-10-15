@@ -219,69 +219,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## generate tx_new clients for the FY for all states in the data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_new</span>(ndr_example)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5,239 x 52</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 1004       0003           </span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 3008       0003           </span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 2008       0003           </span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 30012      0003           </span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 5,235 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="do">## generate tx_new for only one state (State 1 in the data) for January 2021.</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_new</span>(ndr_example,</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">from =</span> <span class="st">&quot;2021-01-01&quot;</span>,</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">to =</span> <span class="st">&quot;2021-01-31&quot;</span>,</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">states =</span> <span class="st">&quot;State 1&quot;</span>)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 244 x 52</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 1004       0003           </span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 10070      00029          </span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 10085      00030          </span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 10087      00033          </span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 240 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span></code></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 0 x 52</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 52 variables: ip &lt;fct&gt;, state &lt;fct&gt;, lga &lt;fct&gt;, facility &lt;fct&gt;,</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   datim_code &lt;fct&gt;, sex &lt;fct&gt;, patient_identifier &lt;chr&gt;,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   hospital_number &lt;chr&gt;, date_of_birth &lt;date&gt;, age_at_art_initiation &lt;dbl&gt;,</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_age &lt;dbl&gt;, art_start_date &lt;date&gt;, art_start_date_source &lt;fct&gt;,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date &lt;date&gt;, last_drug_pickup_date_q1 &lt;date&gt;,</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q2 &lt;date&gt;, last_drug_pickup_date_q3 &lt;date&gt;,</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q4 &lt;date&gt;, last_regimen &lt;fct&gt;, ...</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="do">## generate tx_new for only one state (State 1 in the data) for January 2021.</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_new</span>(ndr_example,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">from =</span> <span class="st">&quot;2021-01-01&quot;</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">to =</span> <span class="st">&quot;2021-01-31&quot;</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">states =</span> <span class="st">&quot;State 1&quot;</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 244 x 52</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA006 Facility 6 datim_code0006 M     State 1004       0003           </span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 10070      00029          </span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 10085      00030          </span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 10087      00033          </span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 240 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span></code></pre></div>
 </div>
 <div id="tx_curr" class="section level3">
 <h3><code>tx_curr()</code></h3>
@@ -293,65 +259,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## generate current clients using the calculated `current_status` column</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_curr</span>(ndr_example)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 16,696 x 52</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 1001       0001           </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 2001       0001           </span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 3001       0001           </span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 1002       0001           </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 1001       0001           </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2 LGA001 Facility 1 datim_code0001 F     State 2001       0001           </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 16,692 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="do">## generate current clients using the default `current_status_28_days` column</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_curr</span>(ndr_example,</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">status =</span> <span class="st">&quot;default&quot;</span>)</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 27,024 x 52</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 3001       0001           </span></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 1002       0001           </span></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 3003       0001           </span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 1003       0002           </span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 27,020 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span></code></pre></div>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="do">## generate current clients using the default `current_status_28_days` column</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_curr</span>(ndr_example,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">status =</span> <span class="st">&quot;default&quot;</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 27,024 x 52</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA001 Facility 1 datim_code0001 F     State 3003       0001           </span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA006 Facility 6 datim_code0006 M     State 1003       0002           </span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 27,020 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span></code></pre></div>
 </div>
 <div id="tx_ml" class="section level3">
 <h3><code>tx_ml()</code></h3>
@@ -435,93 +373,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_mmd</span>(ndr_example)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 14,310 x 53</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 1001       0001           </span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 2001       0001           </span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 3001       0001           </span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 1002       0001           </span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 1001       0001           </span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2 LGA001 Facility 1 datim_code0001 F     State 2001       0001           </span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 14,306 more rows, and 45 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;, months_dispensed &lt;dbl&gt;</span></span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="do">## filter clients who had more than 6 months of ARV</span></span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_mmd</span>(ndr_example,</span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">months =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="cn">Inf</span>))</span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 0 x 53</span></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 53 variables: ip &lt;fct&gt;, state &lt;fct&gt;, lga &lt;fct&gt;, facility &lt;fct&gt;,</span></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   datim_code &lt;fct&gt;, sex &lt;fct&gt;, patient_identifier &lt;chr&gt;,</span></span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   hospital_number &lt;chr&gt;, date_of_birth &lt;date&gt;, age_at_art_initiation &lt;dbl&gt;,</span></span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_age &lt;dbl&gt;, art_start_date &lt;date&gt;, art_start_date_source &lt;fct&gt;,</span></span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date &lt;date&gt;, last_drug_pickup_date_q1 &lt;date&gt;,</span></span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q2 &lt;date&gt;, last_drug_pickup_date_q3 &lt;date&gt;,</span></span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q4 &lt;date&gt;, last_regimen &lt;fct&gt;,</span></span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_clinic_visit_date &lt;date&gt;, days_of_arv_refill &lt;dbl&gt;,</span></span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;, months_dispensed &lt;dbl&gt;</span></span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="do">## list of clients who had either more than 6 months, or &lt; 3 months medications dispensed</span></span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_mmd</span>(ndr_example,</span>
-<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>       <span class="at">months =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="cn">Inf</span>))</span>
-<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2,237 x 53</span></span>
-<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 20012      0001           </span></span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 20021      0008           </span></span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 30027      0009           </span></span>
-<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 30031      00010          </span></span>
-<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 2,233 more rows, and 45 more variables: date_of_birth &lt;date&gt;,</span></span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
-<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
-<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
-<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
-<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;, months_dispensed &lt;dbl&gt;</span></span></code></pre></div>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="do">## filter clients who had more than 6 months of ARV</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_mmd</span>(ndr_example,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">months =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="cn">Inf</span>))</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 0 x 53</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 53 variables: ip &lt;fct&gt;, state &lt;fct&gt;, lga &lt;fct&gt;, facility &lt;fct&gt;,</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   datim_code &lt;fct&gt;, sex &lt;fct&gt;, patient_identifier &lt;chr&gt;,</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   hospital_number &lt;chr&gt;, date_of_birth &lt;date&gt;, age_at_art_initiation &lt;dbl&gt;,</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_age &lt;dbl&gt;, art_start_date &lt;date&gt;, art_start_date_source &lt;fct&gt;,</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date &lt;date&gt;, last_drug_pickup_date_q1 &lt;date&gt;,</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q2 &lt;date&gt;, last_drug_pickup_date_q3 &lt;date&gt;,</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q4 &lt;date&gt;, last_regimen &lt;fct&gt;, ...</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="do">## list of clients who had either more than 6 months, or &lt; 3 months medications dispensed</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_mmd</span>(ndr_example,</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">months =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="cn">Inf</span>))</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2,237 x 53</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 2 LGA006 Facility 6 datim_code0006 F     State 20012      0001           </span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2 LGA002 Facility 2 datim_code0002 M     State 20021      0008           </span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 30027      0009           </span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 30031      00010          </span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 2,233 more rows, and 45 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span></code></pre></div>
 </div>
 </div>
 <div id="viral-load-indicators" class="section level2">
@@ -547,65 +441,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">ref =</span> <span class="st">&quot;2021-03-31&quot;</span>,</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">sample =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7,017 x 52</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 1001       0001           </span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 3006       0002           </span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 1005       0004           </span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 20012      0001           </span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 1001       0001           </span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 3006       0002           </span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1005       0004           </span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 2 LGA006 Facility 6 datim_code0006 F     State 20012      0001           </span></span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 7,013 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="do">## filter clients who are eligible for VL test (result) by 31st of March 2021</span></span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_vl_eligible</span>(ndr_example,</span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>               <span class="at">ref =</span> <span class="st">&quot;2021-03-31&quot;</span>)</span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 14,314 x 52</span></span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 1001       0001           </span></span>
-<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 2001       0001           </span></span>
-<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 3001       0001           </span></span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 1002       0001           </span></span>
-<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 14,310 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
-<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
-<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
-<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
-<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
-<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span></code></pre></div>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="do">## filter clients who are eligible for VL test (result) by 31st of March 2021</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_vl_eligible</span>(ndr_example,</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>               <span class="at">ref =</span> <span class="st">&quot;2021-03-31&quot;</span>)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 14,314 x 52</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 1001       0001           </span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2 LGA001 Facility 1 datim_code0001 F     State 2001       0001           </span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 14,310 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span></code></pre></div>
 </div>
 <div id="tx_pvls_den" class="section level3">
 <h3><code>tx_pvls_den</code></h3>
@@ -613,66 +479,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## determine clients whose viral load result is within the last 1 year for adults (&gt;= 20 years) </span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="do">## and 6 months for paediatrics and adolescents</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_den</span>(ndr_example)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7,458 x 52</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 2001       0001           </span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 3001       0001           </span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 1002       0001           </span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 3005       0001           </span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 7,454 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2,108 x 52</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 1 LGA003 Facility 3 datim_code0003 F     State 1009       0001           </span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 2 LGA006 Facility 6 datim_code0006 M     State 20020      0005           </span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA001 Facility 1 datim_code0001 M     State 30046      0008           </span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 2,104 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="do">## ist of clients who will not be due for a repeat VL test by the end of March 2021</span></span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_den</span>(ndr_example,</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>            <span class="at">ref =</span> <span class="st">&quot;2021-03-31&quot;</span>)</span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7,297 x 52</span></span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 2001       0001           </span></span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 3001       0001           </span></span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 1002       0001           </span></span>
-<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 3005       0001           </span></span>
-<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 7,293 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
-<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
-<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
-<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span></code></pre></div>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="do">## ist of clients who will not be due for a repeat VL test by the end of March 2021</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_den</span>(ndr_example,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">ref =</span> <span class="st">&quot;2021-03-31&quot;</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7,297 x 52</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 2 LGA001 Facility 1 datim_code0001 F     State 2001       0001           </span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA007 Facility 7 datim_code0007 F     State 3005       0001           </span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 7,293 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span></code></pre></div>
 </div>
 <div id="tx_pvls_num" class="section level3">
 <h3><code>tx_pvls_num</code></h3>
@@ -684,66 +522,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## clients whose last viral load result is within the last 1 year for adults (&gt;= 20 years) </span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="do">## and 6 months for paediatrics and adolescents, and are virally suppressed</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_num</span>(ndr_example)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2,889 x 52</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 2005       0001           </span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 2009       0001           </span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 30014      0005           </span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 30021      0006           </span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 2,885 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 817 x 52</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 3 LGA002 Facility 2 datim_code0002 F     State 30048      00020          </span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA002 Facility 2 datim_code0002 M     State 30066      00031          </span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 30076      00023          </span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA001 Facility 1 datim_code0001 M     State 30087      00013          </span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 813 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
 <span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="do">## generate the list of clients whose viral load result is less than 200</span></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_num</span>(ndr_example,</span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="dv">200</span>)</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2,687 x 52</span></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 2009       0001           </span></span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 30014      0005           </span></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 30021      0006           </span></span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 20018      0004           </span></span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 2,683 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
-<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span></code></pre></div>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="do">## generate the list of clients whose viral load result is less than 200</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_num</span>(ndr_example,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="dv">200</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 759 x 52</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 3 LGA002 Facility 2 datim_code0002 F     State 30048      00020          </span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA002 Facility 2 datim_code0002 M     State 30066      00031          </span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 30076      00023          </span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA001 Facility 1 datim_code0001 M     State 30087      00013          </span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 755 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span></code></pre></div>
 </div>
 <div id="tx_vl_unsuppressed" class="section level3">
 <h3><code>tx_vl_unsuppressed</code></h3>
@@ -755,34 +565,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## clients whose last viral load result is within the last 1 year for adults (&gt;= 20 years) </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="do">## and 6 months for paediatrics and adolescents but were unsuppressed</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_vl_unsuppressed</span>(ndr_example)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 369 x 52</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state  lga   facility datim_code sex   patient_identif~ hospital_number</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 30097      00036          </span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 10081      00027          </span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_na~ State~ LGA0~ Facilit~ datim_cod~ F     State 200381     000118         </span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_na~ State~ LGA0~ Facilit~ datim_cod~ M     State 100249     00087          </span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 365 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 108 x 52</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 3 LGA002 Facility 2 datim_code0002 F     State 300630     000233         </span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA001 Facility 1 datim_code0001 F     State 300670     00096          </span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 100542     000170         </span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA002 Facility 2 datim_code0002 F     State 3001128    000416         </span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 104 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, current_viral_load &lt;dbl&gt;,</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load &lt;date&gt;, current_viral_load_q1 &lt;dbl&gt;,</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q1 &lt;date&gt;, current_viral_load_q2 &lt;dbl&gt;,</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q2 &lt;date&gt;, current_viral_load_q3 &lt;dbl&gt;,</span></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q3 &lt;date&gt;, current_viral_load_q4 &lt;dbl&gt;,</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   date_of_current_viral_load_q4 &lt;date&gt;, current_status_28_days &lt;fct&gt;,</span></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_90_days &lt;fct&gt;, current_status_q1_28_days &lt;fct&gt;,</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q1_90_days &lt;fct&gt;, current_status_q2_28_days &lt;fct&gt;,</span></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q2_90_days &lt;fct&gt;, current_status_q3_28_days &lt;fct&gt;,</span></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q3_90_days &lt;fct&gt;, current_status_q4_28_days &lt;fct&gt;,</span></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_status_q4_90_days &lt;fct&gt;, patient_has_died &lt;lgl&gt;,</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   patient_deceased_date &lt;date&gt;, patient_transferred_out &lt;lgl&gt;,</span></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_out_date &lt;date&gt;, patient_transferred_in &lt;lgl&gt;,</span></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   transferred_in_date &lt;date&gt;, x49 &lt;chr&gt;, date_lost &lt;date&gt;,</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   appointment_date &lt;date&gt;, current_status &lt;chr&gt;</span></span></code></pre></div>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span></code></pre></div>
 </div>
 </div>
 <div id="summary-indicators" class="section level2">
@@ -808,10 +604,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 4 x 4</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state    curr tx_new</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt;  &lt;int&gt;</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1  3726    662</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2  5058   1239</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3  7912   3338</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Total   -       16696   5239</span></span></code></pre></div>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1  3726      0</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2  5058      0</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3  7912      0</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Total   -       16696      0</span></span></code></pre></div>
 </div>
 <div id="disaggregate" class="section level3">
 <h3><code>disaggregate</code></h3>

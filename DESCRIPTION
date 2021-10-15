@@ -1,6 +1,6 @@
 Package: tidyndr
 Title: Analysis of the Nigeria National Data Repository (NDR)
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     c(person(given = "Stephen",
            family = "Balogun",
@@ -23,7 +23,7 @@ Description: The goal is to simplify routine analysis of the Nigeria National  D
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Depends: R (>= 3.6)
 Imports: dplyr (>= 1.0.3), forcats, janitor (>= 2.1.0), lubridate (>=
         1.7.9.2), magrittr (>= 2.0.1), purrr (>= 0.3.4), rlang (>=
@@ -35,7 +35,7 @@ BugReports: https://github.com/stephenbalogun/tidyndr/issues
 VignetteBuilder: knitr
 Language: en-US
 NeedsCompilation: no
-Packaged: 2021-03-23 06:06:48 UTC; stephenbalogun
+Packaged: 2021-10-14 15:17:23 UTC; Stephen Balogun
 Author: Stephen Balogun [aut, cre] (<https://orcid.org/0000-0002-9928-3703>),
   Scholastica Olanrewaju [ctb],
   Oluwaseun Okunuga [ctb],
@@ -43,4 +43,4 @@ Author: Stephen Balogun [aut, cre] (<https://orcid.org/0000-0002-9928-3703>),
   Geraldine Abone [ctb]
 Maintainer: Stephen Balogun <stephentaiyebalogun@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-03-23 19:40:03 UTC
+Date/Publication: 2021-10-15 09:20:02 UTC
