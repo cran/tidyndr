@@ -7,7 +7,7 @@
 #' facility of interest with the \code{states} and \code{facilities} arguments.
 #' For multiple states or facilities, use the \code{c()} to combine the names.
 #'
-#' @param data An NDR dataframe imported using the `read_ndr().
+#' @param data An NDR dataframe imported using the `read_ndr()`.
 #' @param from The start date in ISO8601 format (i.e. "yyyy-mm-dd").
 #' The default is to start at the beginning of the current Fiscal Year (i.e. 1st of October).
 #' @param to The end date written in ISO8601 format (i.e. "yyyy-mm-dd").
@@ -20,29 +20,45 @@
 #'   facility, combine the facilities using the \code{c()} e.g.
 #'   \code{c("Facility 1", "Facility 2")}.
 #'
-#' @return tx_new
-#' @export
+#' @return TX_NEW clients in the period of interest
+#' @export tx_new
 #'
 #' @examples
-#' tx_new(ndr_example)
+#' tx_new(ndr_example, from = "2021-06-01", to = "2021-09-30")
 #'
-#' # generate the TX_NEW for a specific state (State 1)
-#' tx_new(ndr_example, states = "State 1")
+#' # generate the TX_NEW for a specific state (Ayetoro)
+#' tx_new(ndr_example, states = "Ayetoro")
 #'
 #' # Determine the TX_NEW for Quarter 1 of FY21 for State 2
 #' tx_new(ndr_example,
-#'   from = "2020-10-01",
-#'   to = "2020-12-31",
-#'   states = c("State 2", "State 3")
+#'   from = "2021-10-01",
+#'   to = "2021-12-31",
+#'   states = c("Arewa", "Ayetoro")
 #' )
 tx_new <- function(data,
-                   from = get("fy_start")(),
-                   to = get("Sys.Date")(),
-                   states = .s,
-                   facilities = .f) {
-  .s <- unique(data$state)
+                   from = NULL,
+                   to = NULL,
+                   states = NULL,
+                   facilities = NULL
+                   ) {
 
-  .f <- unique(subset(data, state %in% states)$facility)
+
+  from <- lubridate::ymd(from %||% get("fy_start")())
+
+  to <- lubridate::ymd(to %||% get("Sys.Date")())
+
+  states <- states %||% unique(data$state)
+
+  facilities <- facilities %||% unique(subset(data, state %in% states)$facility)
+
+  validate_new(data, from, to , states, facilities)
+
+  get_tx_new(data, from, to, states, facilities)
+
+
+}
+
+validate_new <- function(data, from, to, states, facilities) {
 
   if (!all(states %in% unique(data$state))) {
     rlang::abort("state(s) is/are not contained in the supplied data. Check the spelling and/or case.")
@@ -53,32 +69,36 @@ tx_new <- function(data,
                  Check that the facility is correctly spelt and located in the state.")
   }
 
-  if (is.na(lubridate::as_date(from)) || is.na(lubridate::as_date(to))) {
+  if (is.na(from) || is.na(to)) {
     rlang::abort("The supplied date is not in the right format. Did you remember to
                  enter the date in 'yyyy-mm-dd' or forget the quotation marks?")
   }
 
-  if (lubridate::as_date(from) > Sys.Date() || lubridate::as_date(to) > Sys.Date()) {
-    rlang::abort("The date arguments cannot be in the future!!")
+  if (from > Sys.Date() || to > Sys.Date()) {
+    rlang::warn("The date arguments should not be in the future!!")
   }
 
-  if (lubridate::as_date(from) > lubridate::as_date(to)) {
+  if (from > to) {
     rlang::abort("The 'to' date cannot be before the 'from' date!!")
   }
 
+}
 
+
+get_tx_new <-  function(data, from, to, states, facilities) {
 
   dplyr::filter(
     data,
     dplyr::between(
       art_start_date,
-      lubridate::as_date(from),
-      lubridate::as_date(to)
+      from,
+      to
     ),
     state %in% states,
     facility %in% facilities
   )
 }
+
 
 
 utils::globalVariables("art_start_date")

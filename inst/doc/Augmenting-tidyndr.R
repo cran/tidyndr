@@ -49,20 +49,21 @@ tx_net_new %>%
   )
 
 ## ---- vl_testing_coverage-----------------------------------------------------
-vl_eligible <- tx_vl_eligible(current_data)
+vl_eligible <- tx_vl_eligible(current_data, ref = "2021-06-30")
 
-vl_result <- tx_pvls_den(current_data)
+vl_result <- tx_pvls_den(current_data, ref = "2021-06-30")
 
 nrow(vl_result) / nrow(vl_eligible) * 100
 
 ## ---- vl_suppression_coverage-------------------------------------------------
-vl_result <- tx_pvls_den(current_data)
+vl_result <- tx_pvls_den(current_data, ref = "2021-06-30")
 
-vl_suppressed <- tx_pvls_num(current_data)
+vl_suppressed <- tx_pvls_num(current_data, ref = "2021-06-30")
 
 nrow(vl_suppressed) / nrow(vl_result) * 100
 
 ## ---- arv_duration------------------------------------------------------------
+
 less_than_three <- tx_mmd(ndr_example, months = c(0, 1, 2))
 
 three_to_five <- tx_mmd(ndr_example, months = c(3, 4, 5))

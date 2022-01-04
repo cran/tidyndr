@@ -4,10 +4,10 @@
 \alias{tx_curr}
 \title{Subset Clients who are Currently on Treatment}
 \usage{
-tx_curr(data, states = .s, facilities = .f, status = "calculated")
+tx_curr(data, states = NULL, facilities = NULL, status = "calculated")
 }
 \arguments{
-\item{data}{An NDR dataframe imported using the `read_ndr().}
+\item{data}{An NDR dataframe imported using the \code{read_ndr()}.}
 
 \item{states}{The name(s) of the State(s) of interest. The default utilizes all
 the states in the dataframe. If specifying more than one state, combine the
@@ -23,7 +23,7 @@ The options are to either to use the NDR current_status_28_days column
 or the derived current_status column ("calculated").}
 }
 \value{
-tx_curr
+TX_CURR
 }
 \description{
 \code{tx_curr} pulls up the line-list of clients who are active
@@ -32,20 +32,20 @@ the state(s) and/or facilit(ies) of interest using the \code{region} or
 \code{site} arguments.
 }
 \examples{
-# Calculatd active clients using the derived current status
+# Calculated active clients using the derived current status
 tx_curr(ndr_example)
 
 # Calculate the active clients using the NDR `current_status_28_days` column
 tx_curr(ndr_example, status = "default")
 
-# generate the TX_CURR for two states (e.g. "State 1" and "State 2" in the ndr_example file)
+# generate the TX_CURR for two states (e.g. "Arewa" and "Okun" in the ndr_example file)
 tx_curr(ndr_example,
-  states = c("State 1", "State 2")
+  states = c("Okun", "Arewa")
 )
 
-# determine the active clients in two facilities ("Facility 1", and "Facility 2) in "State 1"
+# determine the active clients in two facilities ("Facility1", and "Facility2) in "Abaji"
 tx_curr(ndr_example,
-  states = "State 1",
-  facilities = c("Facility 1", "Facility 2")
+  states = "Abaji",
+  facilities = c("Facility1", "Facility2")
 )
 }

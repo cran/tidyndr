@@ -2,22 +2,24 @@
 % Please edit documentation in R/disaggregate.R
 \name{disaggregate}
 \alias{disaggregate}
-\title{Summarise an indicator into finer details by the specified variable}
+\title{Summarize an indicator into finer details by the specified variable}
 \usage{
-disaggregate(data, by, level = "state")
+disaggregate(data, by, ...)
 }
 \arguments{
 \item{data}{Data containing the indicator to be disaggregated.}
 
 \item{by}{The variable of interest to be used for the disaggregation. The
-options are any of: \code{"sex"}, \code{"current_age"} and \code{"pregnancy_status"}.}
+options are any of: \code{"sex"}, \code{"current_age"}, \code{"pregnancy_status"}, \code{"art_duration"},
+\code{"months_dispensed"} (of ARV), and \code{"age_sex"}.}
 
-\item{level}{The level at which the disaggregation should be performed.
-The options are "ip" (or "country"), "state", "lga" or "facility". The default
+\item{...}{Other parameters to be passed based on the \code{by} supplied. These are: 1) the \code{`level`} of disaggregation,
+("ip" or "country", "state", "lga" and "facility"). 2) \code{`pivot_wide`} TRUE or FALSE, used to determine how the tabular data should be presented.
+The default options are "state" for  \code{by} and TRUE for \code{pivot_wide}.
 value is "state".}
 }
 \value{
-disaggregate
+disaggregated data
 }
 \description{
 Counts the number of occurrence of an outcome based on the category of
@@ -26,7 +28,7 @@ where appropriate.
 }
 \examples{
 ### Disaggregate "TX_NEW" clients into age categories for each state
-new_clients <- tx_new(ndr_example, from = "2021-01-01", to = "2021-03-31")
+new_clients <- tx_new(ndr_example, from = "2021-01-01")
 disaggregate(new_clients, by = "current_age") # default value of level is "state"
 
 ### Disaggregate "TX_CURR" by gender for each facility

@@ -14,7 +14,19 @@
 
 <title>Introduction to tidyndr</title>
 
-<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -125,7 +137,187 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 
 
@@ -145,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>“To measure is to know. If you cannot measure it, you cannot improve it.”</em></p>
 <p>- Lord Kelvin</p>
 </blockquote>
-<p>The <a href="https://ndr.shieldnigeriaproject.com/">Nigeria National Data Repository (NDR)</a> houses the de-identified patient-level information for the HIV program in Nigeria. Perhaps the most versatile feature of the repository is that it allows users with login access to download this patient-level information, analyze, and make informed decisions to improve the response of their program towards achieving the <a href="https://unaids.org/en">UNAIDS</a> <strong>three 95s</strong> targets.</p>
+<p>The <a href="https://ndr.shieldnigeriaproject.com/">Nigeria National Data Repository (NDR)</a> houses the de-identified patient-level information for the HIV program in Nigeria. Perhaps the most versatile feature of the repository is that it allows users with login access to download this patient-level information, analyze, and make informed decisions to improve the response of their program towards achieving the <a href="https://www.unaids.org/">UNAIDS</a> <strong>three 95s</strong> targets.You can download “treatment”, “recent infection” and “HTS” line lists.</p>
 <p>Analysis of the de-identified patient-level information is traditionally conducted in Microsoft Excel. While this provides a great platform, it has some downsides which include:</p>
 <ol style="list-style-type: decimal">
 <li><p>The software must be installed on the user’s computer.</p></li>
@@ -154,12 +346,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Performing the same analysis periodically can be quite tedious and time-consuming as the analysis is usually done afresh every time.</p></li>
 </ol>
 <p>The aim of the {tidyndr} package is to eliminate these hurdles by providing the user with an application that can be conducted on a free and open-source software, allows the user to focus on the task to be performed and not the formula, remove user-defined errors, and allow for easy automation of routine activities.</p>
-<p>The {tidyndr} functions are grouped into four categories for performing related actions.</p>
+<p>The {tidyndr} functions are grouped into five categories for performing related actions.</p>
 <ol style="list-style-type: decimal">
 <li><p>Importing functions</p></li>
 <li><p>Treatment functions</p></li>
 <li><p>Viral Load functions</p></li>
 <li><p>Summary functions</p></li>
+<li><p>HIV-1 recent infection functions</p></li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyndr)</span></code></pre></div>
 <div id="importing-your-ndr-line-list" class="section level2">
@@ -169,32 +362,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Reads your <code>.csv</code> file.</p></li>
 <li><p>Formats the data type for each of the column variables as necessary (converts all date variables to dates and categorical variables to factors).</p></li>
 <li><p>Converts all column names to <a href="https://en.wikipedia.org/wiki/Snake_case">snake case</a> format.</p></li>
-<li><p>Adds three new columns to your data - <code>date_lost</code> (calculated by adding 28 days to the sum of <code>last_drug_pickup_date</code> and the <code>days_of_arv_refill</code>), <code>appointment_date</code> (calculated by adding the number of <code>days_of_arv_refill</code> to the <code>last_drug_pickup_date</code>, and <code>current_status</code> (calculated by classifying the patient as “active” or “inactive” using the value of the <code>time_stamp</code> argument as a reference.</p></li>
+<li><p>Adds three new columns to your treatment data - <code>date_lost</code> (calculated by adding 28 days to the sum of <code>last_drug_pickup_date</code> and the <code>days_of_arv_refill</code>), <code>appointment_date</code> (calculated by adding the number of <code>days_of_arv_refill</code> to the <code>last_drug_pickup_date</code>, and <code>current_status</code> (calculated by classifying the patient as “active” or “inactive” using the value of the <code>time_stamp</code> argument as a reference.</p></li>
 </ol>
-<p>The <code>read_ndr()</code> has 5 arguments that can be specified. The first arguments two are always required:</p>
+<p>The <code>read_ndr()</code> is an <code>s3 generic</code> function that calls another function depending on the type of line-list supplied</p>
 <ul>
 <li><p><code>path</code> - this specifies the location of the NDR line-list to be imported. You can do this either by specifying the “absolute” file path or a “relative” file path. See <code>?file.path()</code> and <code>?read_ndr()</code> for more details. The line-list must be exactly as downloaded from the NDR.</p></li>
-<li><p><code>time_stamp</code> - this is the reference date for the NDR line-list. It is used to derive the <code>current_status</code> of clients based on the last drug pickup date and the number of days of ARV refill. The value for this argument should be specified in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> “yyyy-mm-dd” format. I recommend that you download the NDR line-list on Monday and specify this date as the previous Friday. That way, you are almost certain that all the data available on the NDR were as at the preceding week and upload of data from the new week has not commenced.</p></li>
+<li><p><code>type</code> - to specify the type of line-list that you are importing. The options are <code>treatment</code>, <code>recency</code> and <code>hts</code>.</p></li>
+<li><p><code>time_stamp</code> - this is required only when importing “treatment” line-list. It is the reference date for the NDR line-list. It is used to derive the <code>current_status</code> of clients based on the last drug pickup date and the number of days of ARV refill. The value for this argument should be specified in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> “yyyy-mm-dd” format. I recommend that you download the NDR line-list on Monday and specify this date as the previous Friday. That way, you are almost certain that all the data available on the NDR were as at the preceding week and upload of data from the new week has not commenced.</p></li>
 <li><p><code>cols</code> - when the value to this argument is absent, <code>read_ndr()</code> uses the column specification for NDR column modifications that occurred between October 2020 and March 2021. NDR column specifications before October 2020 are not accounted for by the default function so these will have to be specified manually. See <code>?vroom::cols()</code> for more details.</p></li>
-<li><p><code>quiet</code> - when this is set to FALSE (the default) it prints the names of the two columns added.</p></li>
-<li><p><code>...</code> - these are other arguments that can be passed to <code>vroom::vroom()</code>.</p></li>
+<li><p><code>quiet</code> - when this is set to FALSE (the default) it prints the names of the two columns added. This is available only when the line-list type is “treatment”</p></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">## import file from the computer. This uses the example file that comes with the {tidyndr} package.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">## import file from the computer. This uses the &quot;treatment&quot; example file that comes with the {tidyndr} package.</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;extdata&quot;</span>,</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;ndr_example.csv&quot;</span>,</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">package =</span> <span class="st">&quot;tidyndr&quot;</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ex_ndr <span class="ot">&lt;-</span> <span class="fu">read_ndr</span>(file_path, <span class="at">time_stamp =</span> <span class="st">&quot;2021-02-15&quot;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ex_ndr <span class="ot">&lt;-</span> <span class="fu">read_ndr</span>(file_path, <span class="at">time_stamp =</span> <span class="st">&quot;2021-12-15&quot;</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="do">## import file from the computer using a few of the `...` arguments and setting quite to &quot;TRUE&quot;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="do">## import file from the computer using a few of the `...` arguments and setting `quiet` to TRUE</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ndr_example <span class="ot">&lt;-</span> <span class="fu">read_ndr</span>(file_path,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                        <span class="at">time_stamp =</span> <span class="st">&quot;2021-02-15&quot;</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                        <span class="at">time_stamp =</span> <span class="st">&quot;2021-12-15&quot;</span>,</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                        <span class="at">skip =</span> <span class="dv">0</span>,</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                        <span class="at">comment =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                        <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="do">## import recent infection example file</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>file_path2 <span class="ot">&lt;-</span> <span class="fu">system.file</span>(</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;extdata&quot;</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;recency_example.csv&quot;</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">package =</span> <span class="st">&quot;tidyndr&quot;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>ex_recency <span class="ot">&lt;-</span> <span class="fu">read_ndr</span>(file_path2, <span class="at">type =</span> <span class="st">&quot;recency&quot;</span>)</span></code></pre></div>
 </div>
 <div id="treatment-functions" class="section level2">
 <h2>Treatment functions</h2>
@@ -217,37 +420,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>to</code> - the end date for generating the requested line-list. This defaults to all clients who started ART after the <code>from</code> date.</p></li>
 <li><p><code>states</code> and <code>facilities</code> - the particular state(s) of interest. When this is not supplied,it calculates the new clients for all states and facilities contained in the data.</p></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## generate tx_new clients for the FY for all states in the data</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_new</span>(ndr_example)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 0 x 52</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 52 variables: ip &lt;fct&gt;, state &lt;fct&gt;, lga &lt;fct&gt;, facility &lt;fct&gt;,</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   datim_code &lt;fct&gt;, sex &lt;fct&gt;, patient_identifier &lt;chr&gt;,</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   hospital_number &lt;chr&gt;, date_of_birth &lt;date&gt;, age_at_art_initiation &lt;dbl&gt;,</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   current_age &lt;dbl&gt;, art_start_date &lt;date&gt;, art_start_date_source &lt;fct&gt;,</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date &lt;date&gt;, last_drug_pickup_date_q1 &lt;date&gt;,</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q2 &lt;date&gt;, last_drug_pickup_date_q3 &lt;date&gt;,</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q4 &lt;date&gt;, last_regimen &lt;fct&gt;, ...</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="do">## generate tx_new for only one state (State 1 in the data) for January 2021.</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_new</span>(ndr_example,</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">from =</span> <span class="st">&quot;2021-01-01&quot;</span>,</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">to =</span> <span class="st">&quot;2021-01-31&quot;</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">states =</span> <span class="st">&quot;State 1&quot;</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 244 x 52</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA006 Facility 6 datim_code0006 M     State 1004       0003           </span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 10070      00029          </span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 10085      00030          </span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 10087      00033          </span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 240 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## generate tx_new clients between January and June 2021 for all states in the data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_new</span>(ndr_example, <span class="at">from =</span> <span class="st">&quot;2021-01-01&quot;</span>, <span class="at">to =</span> <span class="st">&quot;2021-06-30&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2,307 x 52</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200048      00016          </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ M     Okuty100049      00012          </span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ M     Okuty600051      00015          </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200057      00020          </span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 2,303 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="do">## generate tx_new for only one state (&quot;Arewa&quot; in the data) for January 2021.</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_new</span>(ndr_example,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">from =</span> <span class="st">&quot;2021-01-01&quot;</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">to =</span> <span class="st">&quot;2021-01-31&quot;</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">states =</span> <span class="st">&quot;Arewa&quot;</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 84 x 52</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Arewa Arewa~ Facilit~ datim_cod~ F     Arety318703      000129         </span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Arewa Oke-A~ Facilit~ datim_cod~ M     Arety518952      000170         </span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Arewa Oke-A~ Facilit~ datim_cod~ M     Arety519197      000213         </span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Arewa Oke-A~ Facilit~ datim_cod~ F     Arety519340      000253         </span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 80 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q3 &lt;date&gt;, last_drug_pickup_date_q4 &lt;date&gt;,</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span></code></pre></div>
 </div>
 <div id="tx_curr" class="section level3">
 <h3><code>tx_curr()</code></h3>
@@ -258,14 +467,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## generate current clients using the calculated `current_status` column</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_curr</span>(ndr_example)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 16,696 x 52</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 1001       0001           </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2 LGA001 Facility 1 datim_code0001 F     State 2001       0001           </span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 16,692 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3,108 x 52</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200028      0009           </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ M     Okuty200033      00010          </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty100058      00013          </span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200066      00023          </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 3,104 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -276,14 +485,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="do">## generate current clients using the default `current_status_28_days` column</span></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_curr</span>(ndr_example,</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">status =</span> <span class="st">&quot;default&quot;</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 27,024 x 52</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA001 Facility 1 datim_code0001 F     State 3003       0001           </span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA006 Facility 6 datim_code0006 M     State 1003       0002           </span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 27,020 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 10,601 x 52</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ M     Okuty600005      0002           </span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200006      0002           </span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ M     Okuty400007      0001           </span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ F     Okuty600010      0003           </span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 10,597 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -293,15 +502,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="tx_ml" class="section level3">
 <h3><code>tx_ml()</code></h3>
-<p>This generates the line-list of clients who were active at the beginning of the reference date and have now become inactive at the <code>to</code> date specified. The default is to generate the line-list of all clients who became inactive in the current Fiscal Year (i.e. were active at the beginning of the FY but have now become inactive). It accepts 5 arguments listed below:</p>
+<p>This generates the line-list of clients who were active at the beginning of the reference date and have now become inactive at the <code>to</code> date specified. The default is to generate the line-list of all clients who became inactive in the current Fiscal Year (i.e. were active at the beginning of FY22 but have become inactive at the end of December 2021). It accepts 5 arguments listed below:</p>
 <ul>
 <li><code>data</code>, <code>from</code>, <code>to</code>, <code>states</code>, <code>facilities</code> - see <a href="#tx_new"><code>tx_new</code></a> documentation above.</li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## generate the line-list of clients who were active at the beginning of October 2020 </span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">## (beginning of FY21) but became inactive at the end of December 2020.</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_ml</span>(<span class="at">new_data =</span> ndr_example,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">from =</span> <span class="st">&quot;2020-10-01&quot;</span>,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">to =</span> <span class="st">&quot;2020-12-31&quot;</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">from =</span> <span class="st">&quot;2021-10-01&quot;</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">to =</span> <span class="st">&quot;2021-12-31&quot;</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="do">## if data from two periods are available, you can supply these to determine the `tx_ml&quot;</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -311,10 +520,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_ml</span>(<span class="at">old_data =</span> ndr_old,</span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">new_data =</span> ndr_new)</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="do">## generate the line-list of clients who have become inactive for &quot;State 1&quot; and &quot;State 2&quot; </span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="do">## generate the line-list of clients who have become inactive for &quot;Arewa&quot; and &quot;Abaji&quot; </span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="do">## since the beginning of October 2021.</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_ml</span>(<span class="at">new_data =</span> ndr_example,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">states =</span> <span class="fu">c</span>(<span class="st">&quot;State 1&quot;</span>, <span class="st">&quot;State 2&quot;</span>))</span></code></pre></div>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_ml</span>(ndr_example,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">states =</span> <span class="fu">c</span>(<span class="st">&quot;Abaji&quot;</span>, <span class="st">&quot;Arewa&quot;</span>), <span class="at">from =</span> <span class="st">&quot;2021-10-01&quot;</span>)</span></code></pre></div>
 </div>
 <div id="tx_ml_outcomes" class="section level3">
 <h3><code>tx_ml_outcomes</code></h3>
@@ -324,7 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>outcome</code> - one of “dead”, “transfer out” (or “transferred out”).</p></li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## generate the line-list of all clients who became inactive this Fiscal Year</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ml_example <span class="ot">&lt;-</span> <span class="fu">tx_ml</span>(<span class="at">new_data =</span> ndr_example)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ml_example <span class="ot">&lt;-</span> <span class="fu">tx_ml</span>(ndr_example)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="do">## subset inactive clients who were transferred out</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_ml_outcomes</span>(ml_example, <span class="at">outcome =</span> <span class="st">&quot;transferred out&quot;</span>)</span></code></pre></div>
@@ -356,12 +565,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## generate list of clients with medication appointment in Q2 of FY21</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>q2_appt <span class="ot">&lt;-</span> <span class="fu">tx_appointment</span>(ndr_example,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">from =</span> <span class="st">&quot;2021-01-01&quot;</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">to =</span> <span class="st">&quot;2021-03-31&quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">from =</span> <span class="st">&quot;2022-01-01&quot;</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">to =</span> <span class="st">&quot;2022-03-31&quot;</span>)</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="do">## print the number of clients with appointments in Q2</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(q2_appt)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 11465</span></span></code></pre></div>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1613</span></span></code></pre></div>
 </div>
 <div id="tx_mmd" class="section level3">
 <h3><code>tx_mmd</code></h3>
@@ -372,14 +581,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>months</code>- the number of months of ARV medications dispensed during the last clinic visit. The default filters active clients who had between 3 and 6 months of ARV but you can change this to generate the list of clients who had more than 6 months medications dispensed for example.</p></li>
 </ul>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_mmd</span>(ndr_example)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 14,310 x 53</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 1001       0001           </span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2 LGA001 Facility 1 datim_code0001 F     State 2001       0001           </span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 14,306 more rows, and 45 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2,703 x 53</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200028      0009           </span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ M     Okuty200033      00010          </span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200066      00023          </span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200067      00024          </span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 2,699 more rows, and 45 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -402,14 +611,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="do">## list of clients who had either more than 6 months, or &lt; 3 months medications dispensed</span></span>
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_mmd</span>(ndr_example,</span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">months =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">7</span>, <span class="cn">Inf</span>))</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2,237 x 53</span></span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 2 LGA006 Facility 6 datim_code0006 F     State 20012      0001           </span></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2 LGA002 Facility 2 datim_code0002 M     State 20021      0008           </span></span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 30027      0009           </span></span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 30031      00010          </span></span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 2,233 more rows, and 45 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 397 x 53</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty100058      00013          </span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ F     Okuty600095      00029          </span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ M     Okuty600249      00078          </span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Isale~ Facilit~ datim_cod~ F     Okuty700331      0005           </span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 393 more rows, and 45 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -436,18 +645,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>ref</code> - the reference date for when the eligibility period should be determined. This should be provided in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. When this is not supplied, it assumes you would like to know the clients who are eligible for viral load test as at the day of analysis.</p></li>
 <li><p><code>sample</code> - one of two (TRUE or FALSE) to determine if only those who are eligible for viral load sample collection within the period of interest (sample = TRUE) or those eligible for viral load test results (sample = FALSE).</p></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## list of clients who are eligible for VL sample collection by the end of March 2021</span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## list of clients who are eligible for VL sample collection by the end of March 2022</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_vl_eligible</span>(ndr_example,</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">ref =</span> <span class="st">&quot;2021-03-31&quot;</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">ref =</span> <span class="st">&quot;2022-03-31&quot;</span>,</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">sample =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7,017 x 52</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 1001       0001           </span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 3006       0002           </span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1005       0004           </span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 2 LGA006 Facility 6 datim_code0006 F     State 20012      0001           </span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 7,013 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 747 x 52</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200028      0009           </span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty100058      00013          </span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200066      00023          </span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200189      00077          </span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 743 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -455,17 +664,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span>
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="do">## filter clients who are eligible for VL test (result) by 31st of March 2021</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="do">## filter clients who are eligible for VL test (result) by 31st of December 2021</span></span>
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_vl_eligible</span>(ndr_example,</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>               <span class="at">ref =</span> <span class="st">&quot;2021-03-31&quot;</span>)</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 14,314 x 52</span></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA002 Facility 2 datim_code0002 M     State 1001       0001           </span></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2 LGA001 Facility 1 datim_code0001 F     State 2001       0001           </span></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 14,310 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>               <span class="at">ref =</span> <span class="st">&quot;2021-12-31&quot;</span>)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1,023 x 52</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200028      0009           </span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty100058      00013          </span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200066      00023          </span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200189      00077          </span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 1,019 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -479,14 +688,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## determine clients whose viral load result is within the last 1 year for adults (&gt;= 20 years) </span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="do">## and 6 months for paediatrics and adolescents</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_den</span>(ndr_example)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2,108 x 52</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 1 LGA003 Facility 3 datim_code0003 F     State 1009       0001           </span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 2 LGA006 Facility 6 datim_code0006 M     State 20020      0005           </span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA001 Facility 1 datim_code0001 M     State 30046      0008           </span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 2,104 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 444 x 52</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty200426      000163         </span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ F     Okuty600508      000167         </span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty400643      00026          </span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty100660      000102         </span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 440 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -494,17 +703,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span>
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="do">## ist of clients who will not be due for a repeat VL test by the end of March 2021</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="do">## List of clients who will not be due for a repeat VL test by the end of September 2021</span></span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_den</span>(ndr_example,</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">ref =</span> <span class="st">&quot;2021-03-31&quot;</span>)</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7,297 x 52</span></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 2 LGA001 Facility 1 datim_code0001 F     State 2001       0001           </span></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA006 Facility 6 datim_code0006 M     State 3001       0001           </span></span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 1002       0001           </span></span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA007 Facility 7 datim_code0007 F     State 3005       0001           </span></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 7,293 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">ref =</span> <span class="st">&quot;2021-09-30&quot;</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 462 x 52</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ F     Okuty600441      000147         </span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ F     Okuty600508      000167         </span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty400643      00026          </span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty100660      000102         </span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 458 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -522,14 +731,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## clients whose last viral load result is within the last 1 year for adults (&gt;= 20 years) </span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="do">## and 6 months for paediatrics and adolescents, and are virally suppressed</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_num</span>(ndr_example)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 817 x 52</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 3 LGA002 Facility 2 datim_code0002 F     State 30048      00020          </span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA002 Facility 2 datim_code0002 M     State 30066      00031          </span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 30076      00023          </span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA001 Facility 1 datim_code0001 M     State 30087      00013          </span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 813 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 82 x 52</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ M     Okuty601756      000597         </span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ F     Okuty602000      000680         </span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ F     Okuty602028      000689         </span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ M     Okuty202745      0001036        </span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 78 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -537,17 +746,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_regimen &lt;fct&gt;, last_clinic_visit_date &lt;date&gt;,</span></span>
 <span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   days_of_arv_refill &lt;dbl&gt;, pregnancy_status &lt;fct&gt;, ...</span></span>
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="do">## generate the list of clients whose viral load result is less than 200</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="do">## generate the list of clients whose viral load result is less than 50</span></span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_pvls_num</span>(ndr_example,</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="dv">200</span>)</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 759 x 52</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 3 LGA002 Facility 2 datim_code0002 F     State 30048      00020          </span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA002 Facility 2 datim_code0002 M     State 30066      00031          </span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3 LGA006 Facility 6 datim_code0006 F     State 30076      00023          </span></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA001 Facility 1 datim_code0001 M     State 30087      00013          </span></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 755 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="dv">50</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 71 x 52</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ M     Okuty601756      000597         </span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ F     Okuty602000      000680         </span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Okun  Odo-O~ Facilit~ datim_cod~ F     Okuty602028      000689         </span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ M     Okuty202745      0001036        </span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 67 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -565,14 +774,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## clients whose last viral load result is within the last 1 year for adults (&gt;= 20 years) </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="do">## and 6 months for paediatrics and adolescents but were unsuppressed</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tx_vl_unsuppressed</span>(ndr_example)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 108 x 52</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   lga    facility   datim_code     sex   patient_identif~ hospital_number</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;   &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;      &lt;fct&gt;          &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 3 LGA002 Facility 2 datim_code0002 F     State 300630     000233         </span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 3 LGA001 Facility 1 datim_code0001 F     State 300670     00096          </span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 1 LGA006 Facility 6 datim_code0006 F     State 100542     000170         </span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 IP_name State 3 LGA002 Facility 2 datim_code0002 F     State 3001128    000416         </span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 104 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 7 x 52</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip     state lga    facility datim_code sex   patient_identif~ hospital_number</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;  &lt;fct&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;fct&gt;      &lt;fct&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHe~ Okun  Okun ~ Facilit~ datim_cod~ F     Okuty202820      0001061        </span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHe~ Abaji Abaji~ Facilit~ datim_cod~ F     Abaty205328      000193         </span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHe~ Abaji Abaji~ Facilit~ datim_cod~ F     Abaty409929      000515         </span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHe~ Arewa Arewa~ Facilit~ datim_cod~ M     Arety424075      0001549        </span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 3 more rows, and 44 more variables: date_of_birth &lt;date&gt;,</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   age_at_art_initiation &lt;dbl&gt;, current_age &lt;dbl&gt;, art_start_date &lt;date&gt;,</span></span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   art_start_date_source &lt;fct&gt;, last_drug_pickup_date &lt;date&gt;,</span></span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   last_drug_pickup_date_q1 &lt;date&gt;, last_drug_pickup_date_q2 &lt;date&gt;,</span></span>
@@ -598,26 +807,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>curr <span class="ot">&lt;-</span> <span class="fu">tx_curr</span>(ndr_example) <span class="co"># generate active clients and assign to &quot;curr&quot;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">tx_new</span>(ndr_example) <span class="co"># generate TX_NEW for the FY and assign to &quot;new&quot;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">tx_new</span>(ndr_example, <span class="at">from =</span> <span class="st">&quot;2021-10-01&quot;</span>, <span class="at">to =</span> <span class="st">&quot;2021-12-31&quot;</span>) <span class="co"># generate TX_NEW for the FY and assign to &quot;new&quot;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise_ndr</span>(curr, new, <span class="at">level =</span> <span class="st">&quot;state&quot;</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;curr&quot;</span>, <span class="st">&quot;tx_new&quot;</span>))</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 4 x 4</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state    curr tx_new</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt;  &lt;int&gt;</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1  3726      0</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2  5058      0</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3  7912      0</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Total   -       16696      0</span></span></code></pre></div>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise_ndr</span>(curr, new, <span class="at">level =</span> <span class="st">&quot;state&quot;</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;curr&quot;</span>, <span class="st">&quot;tx_new&quot;</span>)) <span class="co"># when the `names` argument is not supplied, the data names are used</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 x 4</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip        state    curr tx_new</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;   &lt;int&gt;  &lt;int&gt;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHealth Okun      206     39</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHealth Abaji     894    230</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHealth Arewa    1217    283</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHealth Ayetoro   791    191</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 1 more row</span></span></code></pre></div>
 </div>
 <div id="disaggregate" class="section level3">
 <h3><code>disaggregate</code></h3>
-<p>A very powerful function that allows you to summarise your generated line-list disaggregated based on a particular variable. The disaggregation options currently available are “age (or current age)”, “sex (or gender)”, or “pregnancy status”. It accepts 3 arguments:</p>
+<p>A very powerful function that allows you to summarise your generated line-list disaggregated based on a particular variable. The disaggregation options currently available are “current_age”, “sex”, “pregnancy_status”, “art_duration”, “months_dispensed”, and “age_sex”. It accepts 4 arguments:</p>
 <ul>
 <li><p><code>data</code> - see <a href="#tx_new"><code>tx_new()</code></a> documentation above.</p></li>
-<li><p><code>by</code> and <code>level</code> - see the documentation for <a href="#summarise_ndr"><code>summarise_ndr()</code></a> above.</p></li>
+<li><p><code>by</code>, <code>level</code> and <code>pivot_wide</code> - see the documentation for <a href="#summarise_ndr"><code>summarise_ndr()</code></a> above.</p></li>
 </ul>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## generate list of inactive clients</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>inactives <span class="ot">&lt;-</span> <span class="fu">tx_ml</span>(<span class="at">new_data =</span> ndr_example)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>inactives <span class="ot">&lt;-</span> <span class="fu">tx_ml</span>(<span class="at">new_data =</span> ndr_example, <span class="at">from =</span> <span class="st">&quot;2021-01-01&quot;</span>, <span class="at">to =</span> <span class="st">&quot;2021-03-31&quot;</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="do">## disaggregate inactive clients by gender at state level</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">disaggregate</span>(inactives,</span>
@@ -626,7 +836,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="do">## disaggregate inactive clients by &quot;age group&quot; at country level</span></span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="fu">disaggregate</span>(inactives,</span>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="st">&quot;current_age&quot;</span>,</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">level =</span> <span class="st">&quot;country&quot;</span>)</span></code></pre></div>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">level =</span> <span class="st">&quot;country&quot;</span>,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">pivot_wide =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 </div>
 

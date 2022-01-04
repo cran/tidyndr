@@ -9,34 +9,42 @@
 #'  or the derived current_status column ("calculated").
 #' @inheritParams tx_new
 #'
-#' @return tx_curr
+#' @return TX_CURR
 #' @export
 #'
 #' @examples
-#' # Calculatd active clients using the derived current status
+#' # Calculated active clients using the derived current status
 #' tx_curr(ndr_example)
 #'
 #' # Calculate the active clients using the NDR `current_status_28_days` column
 #' tx_curr(ndr_example, status = "default")
 #'
-#' # generate the TX_CURR for two states (e.g. "State 1" and "State 2" in the ndr_example file)
+#' # generate the TX_CURR for two states (e.g. "Arewa" and "Okun" in the ndr_example file)
 #' tx_curr(ndr_example,
-#'   states = c("State 1", "State 2")
+#'   states = c("Okun", "Arewa")
 #' )
 #'
-#' # determine the active clients in two facilities ("Facility 1", and "Facility 2) in "State 1"
+#' # determine the active clients in two facilities ("Facility1", and "Facility2) in "Abaji"
 #' tx_curr(ndr_example,
-#'   states = "State 1",
-#'   facilities = c("Facility 1", "Facility 2")
+#'   states = "Abaji",
+#'   facilities = c("Facility1", "Facility2")
 #' )
 tx_curr <- function(data,
-                    states = .s,
-                    facilities = .f,
+                    states = NULL,
+                    facilities = NULL,
                     status = "calculated") {
-  .s <- unique(data$state)
 
-  .f <- unique(subset(data, state %in% states)$facility)
+  states <- states %||% unique(data$state)
 
+  facilities <- facilities %||% unique(subset(data, state %in% states)$facility)
+
+  validate_curr(data, states, facilities, status)
+
+  get_tx_curr(data, states, facilities, status)
+}
+
+
+validate_curr <- function(data, states, facilities, status) {
   if (!all(states %in% unique(data$state))) {
     rlang::abort("state(s) is/are not contained in the supplied data. Check the spelling and/or case.")
   }
@@ -49,22 +57,34 @@ tx_curr <- function(data,
   if (!status %in% c("default", "calculated")) {
     rlang::abort("`status` can only be one of 'default' or 'calculated'. Check that you did not mispell, include CAPS or forget to quotation marks!")
   }
+}
 
+get_tx_curr <- function(data,
+                        states,
+                        facilities,
+                        status) {
   switch(status,
     "calculated" = dplyr::filter(
       data,
       current_status == "Active",
+      !patient_has_died %in% TRUE,
+      !patient_transferred_out %in% TRUE,
       state %in% states,
       facility %in% facilities
     ),
     "default" = dplyr::filter(
       data,
       current_status_28_days == "Active",
+      !patient_has_died %in% TRUE,
+      !patient_transferred_out %in% TRUE,
       state %in% states,
       facility %in% facilities
     )
   )
 }
 
-
-utils::globalVariables("current_status")
+utils::globalVariables(
+  c("current_status",
+    "patient_has_died",
+    "patient_transferred_out")
+)

@@ -6,9 +6,9 @@
 \usage{
 tx_vl_unsuppressed(
   data,
-  ref = get("Sys.Date")(),
-  states = .s,
-  facilities = .f,
+  ref = NULL,
+  states = NULL,
+  facilities = NULL,
   status = "calculated",
   n = 1000
 )
@@ -49,8 +49,8 @@ tx_vl_unsuppressed(ndr_example)
 
 # Determine clients who are virally unsuppressed for a state at the end of Q1
 tx_vl_unsuppressed(ndr_example,
-  ref = "2020-12-31",
-  states = "State 1"
+  ref = "2021-12-31",
+  states = "Ayetoro"
 )
 
 # Determine clients with viral load result of 400 or more (low level viremia)

@@ -6,9 +6,9 @@
 \usage{
 tx_pvls_num(
   data,
-  ref = get("Sys.Date")(),
-  states = .s,
-  facilities = .f,
+  ref = NULL,
+  states = NULL,
+  facilities = NULL,
   status = "calculated",
   n = 1000
 )
@@ -47,10 +47,10 @@ suppressed.
 \examples{
 tx_pvls_num(ndr_example)
 
-# Determine clients who are virally suppressed for a state at the end of Q1
+# Determine clients who are virally suppressed for a state at the end of October 2021
 tx_pvls_num(ndr_example,
-  ref = "2020-12-31",
-  states = "State 1"
+  ref = "2021-10-31",
+  states = "Arewa"
 )
 
 # Determine clients with viral load result less than 400
