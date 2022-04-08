@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     </style>
 
 
+
 <style type="text/css">
   code {
     white-space: pre;
@@ -381,10 +382,10 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 4 x 5</span></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   tx_curr_prev tx_curr_now tx_net_new</span></span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;int&gt;       &lt;int&gt;      &lt;int&gt;</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1         4776        5668        892</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2         6689        8048       1359</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3         9324       10526       1202</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Total   -              20789       24243       3454</span></span></code></pre></div>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1         5645        5645          0</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2         7929        7929          0</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3        13446       13446          0</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Total   -              27020       27020          0</span></span></code></pre></div>
 </div>
 <div id="continuity-of-treatment-retention-proxy" class="section level3">
 <h3>Continuity of Treatment (Retention) Proxy</h3>
@@ -413,10 +414,10 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 4 x 7</span></span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip      state   tx_curr_prev tx_curr_now tx_net_new tx_new cot_proxy</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;int&gt;       &lt;int&gt;      &lt;int&gt;  &lt;int&gt;     &lt;dbl&gt;</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1         4776        5668        892    272      1.42</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2         6689        8048       1359    300      1.54</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3         9324       10526       1202    984      1.07</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Total   -              20789       24243       3454   1556      1.28</span></span></code></pre></div>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 IP_name State 1         5645        5645          0    272     0.838</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 IP_name State 2         7929        7929          0    300     0.869</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 IP_name State 3        13446       13446          0    984     0.774</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Total   -              27020       27020          0   1556     0.813</span></span></code></pre></div>
 </div>
 <div id="viral-load-testing-coverage" class="section level3">
 <h3>Viral Load Testing Coverage</h3>
@@ -430,7 +431,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>vl_result <span class="ot">&lt;-</span> <span class="fu">tx_pvls_den</span>(current_data, <span class="at">ref =</span> <span class="st">&quot;2021-06-30&quot;</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(vl_result) <span class="sc">/</span> <span class="fu">nrow</span>(vl_eligible) <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 28.7127</span></span></code></pre></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 41.79948</span></span></code></pre></div>
 </div>
 <div id="viral-load-suppression-coverage" class="section level3">
 <h3>Viral Load Suppression Coverage</h3>
@@ -441,7 +442,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>vl_suppressed <span class="ot">&lt;-</span> <span class="fu">tx_pvls_num</span>(current_data, <span class="at">ref =</span> <span class="st">&quot;2021-06-30&quot;</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(vl_suppressed) <span class="sc">/</span> <span class="fu">nrow</span>(vl_result) <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 38.63432</span></span></code></pre></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 38.63636</span></span></code></pre></div>
 </div>
 <div id="duration-of-arv-dispensed" class="section level3">
 <h3>Duration of ARV Dispensed</h3>
@@ -465,10 +466,10 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 x 5</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ip        state   `&lt; 3months` `3-5months` `6+ months`</span></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;         &lt;int&gt;       &lt;int&gt;       &lt;int&gt;</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHealth Okun             30          67         109</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHealth Abaji            94         284         516</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHealth Arewa           173         409         635</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHealth Ayetoro         108         216         467</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 NGOHealth Okun              5         196         440</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 NGOHealth Abaji            43         986        2167</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 NGOHealth Arewa            54        1316        2718</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 NGOHealth Ayetoro          32         821        1868</span></span>
 <span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 1 more row</span></span></code></pre></div>
 </div>
 

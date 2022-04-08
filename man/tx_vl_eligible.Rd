@@ -9,8 +9,10 @@ tx_vl_eligible(
   ref = NULL,
   states = NULL,
   facilities = NULL,
-  status = "calculated",
-  sample = FALSE
+  status = "default",
+  sample = FALSE,
+  use_six_months = TRUE,
+  remove_duplicates = FALSE
 )
 }
 \arguments{
@@ -36,6 +38,10 @@ or the derived current_status column ("calculated").}
 \item{sample}{Logical (TRUE or FALSE) indicating whether all clients eligible for
 viral load test should be filtered irrespective of their eligibility for sample
 collection or only those due for sample collection.}
+
+\item{use_six_months}{\code{TRUE} of \code{FALSE}. To determine if six months eligibility should be used for pediatrics and adolescents repeat viral load or the standard annual repeat.}
+
+\item{remove_duplicates}{Boolean argument. It specifies if duplicate patient entries in the facilities should be removed or kept}
 }
 \value{
 tx_vl_eligible

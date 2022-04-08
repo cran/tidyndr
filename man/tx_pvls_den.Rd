@@ -9,7 +9,9 @@ tx_pvls_den(
   ref = NULL,
   states = NULL,
   facilities = NULL,
-  status = "calculated"
+  status = "default",
+  use_six_months = TRUE,
+  remove_duplicates = FALSE
 )
 }
 \arguments{
@@ -31,6 +33,10 @@ facility, combine the facilities using the \code{c()} e.g.
 \item{status}{Determines how the number of active clients is calculated.
 The options are to either to use the NDR current_status_28_days column
 or the derived current_status column ("calculated").}
+
+\item{use_six_months}{\code{TRUE} of \code{FALSE}. To determine if six months eligibility should be used for pediatrics and adolescents repeat viral load or the standard annual repeat.}
+
+\item{remove_duplicates}{Boolean argument. It specifies if duplicate patient entries in the facilities should be removed or kept}
 }
 \value{
 tx_pvls_den

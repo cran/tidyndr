@@ -2,6 +2,7 @@
 
 export("%>%")
 export("%||%")
+export(cot_cascade)
 export(current_cols)
 export(disaggregate)
 export(fy_start)
@@ -30,4 +31,5 @@ export(tx_regimen)
 export(tx_rtt)
 export(tx_vl_eligible)
 export(tx_vl_unsuppressed)
+export(vl_cascade)
 importFrom(magrittr,"%>%")
